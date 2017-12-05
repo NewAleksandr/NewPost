@@ -1,0 +1,5 @@
+NewpostApp.controller('mainController', function($scope) {
+
+
+
+});

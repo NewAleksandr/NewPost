@@ -1,0 +1,270 @@
+
+.city{
+  width: 550px;
+}
+
+.department{
+    width: 550px;
+}
+
+.choose-view-department{
+  width: 70px;
+}
+
+.ShowInfoButton{
+  width: 140px;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.ShowClearButton{
+  width: 140px;
+  padding: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.AllDepartmentList{
+  word-break:break-all;
+  background: #bbbbbb;
+  min-height: 550px;
+  margin: 25px auto;
+  padding: 5px;
+  overflow: hidden
+}
+
+/*стритмап лефлет*/
+
+.DepartmentAmount{
+  width: 1140px;
+  height: 85px;
+  background: #f3f3f3;
+  border: 1px solid #d1d1d1;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.DepartmentAmountTitle{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.CityValue{
+  width: 400px;
+  font-size: 15px;
+}
+
+.PostmashineWarning{
+  width: 370px;
+  color: #aa000d;
+}
+
+.ValueTitle{
+  width: 100px;
+  font-size: 14px;
+}
+
+.ValueAmount{
+  width: 70px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.DepartmentInfo{
+  width: 1140px;
+  height: 185px;
+  background: #f3f3f3;
+  border: 1px solid #d1d1d1;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.DepartmentInfoTitle{
+  padding: 10px 0;
+}
+
+.DepartmentInfo td{
+  vertical-align: top;
+}
+
+.DepartmentAmount td{
+  vertical-align: top;
+}
+
+.DepartmentInfoShedule{
+  width: 200px;
+}
+
+.DepartmentInfoPhone{
+  width: 200px;
+}
+
+.DepartmentTable{
+  width: 100%;
+}
+
+.DepartmentInfoPhone,
+.DepartmentInfoData{
+  padding-top: 25px;
+}
+
+.DescriptionData{
+  padding-top: 15px;
+}
+
+.ui-select-search{
+  text-align: center;
+}
+
+.SelectCity{
+  width: 350px;
+}
+
+
+
+@media (min-width: 320px) and (max-width: 576px){
+
+}
+
+@media (min-width: 576px) and (max-width: 768px){
+
+}
+
+@media (min-width: 768px) and (max-width: 992px){
+
+}
+
+@media (min-width: 992px) and (max-width: 1200px){
+
+}
+
+@media (min-width: 1200px) {
+
+}
+
+.breadcrumbs{
+  background: #f50733;
+  margin: 5px 0;
+  padding: 5px 15px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.MapService{
+  margin: 5px 0 35px 0;
+}
+
+.MapContainer{
+  width: 500px;
+  height: 500px;
+  float: right;
+}
+
+.ListEngine{
+  width: 600px;
+  height: 450px;
+  float: left;
+}
+
+.SelectTypeDepartment{
+  width: 100%;
+}
+
+.CityNameInput{
+  width: 100%;
+  text-align: center;
+}
+
+.CityList{
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+
+}
+
+.CityListItem{
+  margin: 0 0 2px 0;
+  padding: 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.ListContainer{
+  height: 450px;
+  overflow-y: scroll;
+}
+
+
+/**/
+.ListItem{
+  list-style-type: none;
+  font-size: 15px;
+  margin: 0;
+  padding: 5px 0;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.List{
+  margin: 0;
+  padding: 0;
+}
+
+
+.ListSity {
+  margin: 0;
+  padding: 0;
+}
+
+
+.ListSity li{
+  list-style-type: none;
+  margin: 0;
+  padding: 4px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #EEEEEE;
+  cursor: pointer;
+}
+
+.ListSity li:hover{
+  background: #f1f1f1;
+}
+
+
+.DepartmentList {
+  margin: 0;
+  padding: 0;
+}
+
+.DepartmentList li{
+  list-style-type: none;
+  margin: 15px 0;
+  padding: 4px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #f50733;
+  cursor: pointer;
+}
+
+.DepartmentList li:hover{
+  background: #f1f1f1;
+}
+
+.breadcrumbsList{
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbsList li{
+  margin: 0 10px;
+  padding: 3px 0;
+  display: inline-block;
+  list-style-type: none;
+}
+
+.SortTypeDepartment{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

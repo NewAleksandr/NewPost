@@ -1,0 +1,231 @@
+<div class="cost-of-delivery-style">
+<nav>
+    <a href="http://localhost:63342/domains/newpost-project/index.html?_ijt=c46nlm3k9rk2l8pgk53hujs8fc#/">Головна</a>
+    <span>/</span>
+    <a href="http://localhost:63342/domains/newpost-project/index.html?_ijt=c46nlm3k9rk2l8pgk53hujs8fc#/price">Вартість доставки</a>
+</nav>
+<h4>Вартість доставки</h4>
+
+
+
+<fieldset>
+
+    <!-- on click -->
+    <div class="row col-sm-10 offset-sm-1 estimated-shipping-cost" ng-if="clickTotal" >
+        <h1>Розрахункова вартість доставки  {{ total }}.00 грн.</h1>
+    </div>
+
+    <div class="row col-sm-10 offset-sm-1 estimated-shipping-cost" ng-if="clickTotalD">
+        <h1>Розрахункова вартість доставки  {{ totalD }}.00 грн.</h1>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-5 offset-sm-2">Місто-відправник</div>
+        <div class="col-sm-5">Місто-одержувач</div>
+    </div>
+      <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Маршрут</label>
+                <div class="col-sm-5">
+                    <select ng-options="item.Description for item in listTowns" class="form-control" id="exampleSelect1" ng-model="listPlacesSender"></select>
+                </div>
+               <div class="col-sm-5">
+                  <select ng-options="item.Description for item in listTowns" class="form-control" id="exampleSelect2" ng-model="listPlacesRecipient"></select>
+               </div>
+      </div>
+
+    <div class="form-group row">
+        <label for="exampleSelect3" class="col-sm-2 col-form-label">Тип послуги</label>
+        <div class="col-sm-5">
+            <select ng-options="item.Description for item in Service" class="form-control" id="exampleSelect3" ng-model="typeService"></select>
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="exampleSelect4" class="col-sm-2 col-form-label">Тип вантажу</label>
+        <div class="col-sm-5">
+            <select  ng-model="typeDelivery" ng-options="item.Description for item in W" class="form-control" id="exampleSelect4"></select>
+        </div>
+    </div>
+
+    <div class="form-group row" ng-if="(((typeService.Ref == 'WarehouseWarehouse') && (typeDelivery.Ref == 'Cargo')) ||
+        ((typeService.Ref == 'WarehouseDoors') && (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsWarehouse') &&
+        (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsDoors') && (typeDelivery.Ref == 'Cargo')))">
+
+        <label for="actualWeight" class="col-sm-2 ">Фактична вага</label>
+        <div class="col-sm-5">
+            <input class="form-control form-control-xl  form-control-sm form-control-xs" type="text" ng-model="priceData.actualWeight" placeholder="Фактична вага" id="actualWeight">
+        </div>
+    </div>
+    <!--may be necessary form-group-raw-->
+    <div class="row" ng-if="(((typeService.Ref == 'WarehouseWarehouse') && (typeDelivery.Ref == 'Cargo')) ||
+        ((typeService.Ref == 'WarehouseDoors') && (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsWarehouse') &&
+        (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsDoors') && (typeDelivery.Ref == 'Cargo')))">
+        <div class="col-sm-3 offset-sm-2">Довжина</div>
+        <div class="col-sm-3">Ширина</div>
+        <div class="col-sm-3">Висота</div>
+    </div>
+
+    <div class="form-group row" ng-if="(((typeService.Ref == 'WarehouseWarehouse') && (typeDelivery.Ref == 'Cargo')) ||
+     ((typeService.Ref == 'WarehouseDoors') && (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsWarehouse') &&
+     (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsDoors') && (typeDelivery.Ref == 'Cargo')))">
+
+        <label for="actualWeight" class="col-sm-2 ">Габарити відправлення</label>
+        <div class="col-sm-3"><input  type="text" ng-model="lengthCargo" class="form-control" id="length"></div>
+        <div class="col-sm-3"><input type="text" ng-model="widthCargo" class="form-control" id="width"></div>
+        <div class="col-sm-3"><input type="text" ng-model="heightCargo" class="form-control" id="height"></div>
+    </div>
+
+    <div class="form-group row" ng-if="(((typeService.Ref == 'WarehouseWarehouse') && (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'WarehouseDoors') &&
+     (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsWarehouse') && (typeDelivery.Ref == 'Cargo')) || ((typeService.Ref == 'DoorsDoors') &&
+      (typeDelivery.Ref == 'Cargo')))">
+
+        <label for="quantityPlaces" class="col-sm-2 col-form-label">Кількість місць</label>
+        <div class="col-sm-5">
+            <input type="text"  ng-model="priceData.quantityPlaces" class="form-control" placeholder="Кількість місць" id="quantityPlaces">
+        </div>
+    </div>
+
+    <div class="form-group row" ng-if="((typeService.Ref == 'WarehouseWarehouse') ||  (typeService.Ref == 'WarehouseDoors') || (typeService.Ref =='DoorsWarehouse') ||
+    (typeService.Ref =='DoorsDoors')) && ((typeDelivery.Ref == 'Documents') || (typeDelivery.Ref =='Cargo') || (typeDelivery.Ref =='Pallet') ||
+     (typeDelivery.Ref =='TiresWheels'))">
+
+        <label for="announcedPrice" class="col-sm-2 col-form-label">Оголошена вартість</label>
+        <div class="col-sm-5">
+            <input type="text" ng-model="priceData.announcedPrice" class="form-control" placeholder="Оголошена вартість" id="announcedPrice">
+        </div>
+    </div>
+
+    <!-- return Delivery-->
+    <div class="form-group row" ng-if="((typeService.Ref == 'WarehouseWarehouse') ||  (typeService.Ref == 'WarehouseDoors') ||
+    (typeService.Ref =='DoorsWarehouse') || (typeService.Ref =='DoorsDoors')) && ((typeDelivery.Ref == 'Documents') ||
+    (typeDelivery.Ref =='Cargo') || (typeDelivery.Ref =='Pallet') || (typeDelivery.Ref =='TiresWheels'))">
+
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" ng-model="returnDelivery"> Зворотня доставка
+                </label>
+
+                <div ng-show="returnDelivery" class="form-group col-md-8">
+                    <select ng-options="item.Description for item in listReturn" class="form-control" ng-model="SerReturn"></select>
+                    <div class="col-md-8" ng-if="(SerReturn.Ref=='Money')">
+                        <input type="text" ng-model="amountRetMoney" class="form-control" id="amountRetMoney">
+                        <label for="amountRetMoney" class="form-check-label">Сума</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+ <!-- Serivice lift getting -->
+    <div class="form-group row" ng-if="((typeService.Ref == 'WarehouseDoors') || (typeService.Ref =='DoorsDoors')) &&
+    ((typeDelivery.Ref =='Cargo') || (typeDelivery.Ref =='TiresWheels'))">
+
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" ng-model="serviceLiftUp">Послуга підйом на верх
+                </label>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Service Palleting -->
+    <div class="form-group row" ng-if="typeDelivery.Ref =='Pallet'">
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" ng-model="servicePallet">Послуга палетування
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Service Express delivering of pallets-->
+    <div class="form-group row" ng-if="typeDelivery.Ref =='Pallet'">
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" ng-model="expressDeliveryPallet">Послуга експрес доставка палет
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- service Packing of Documents-->
+    
+    <div class="form-group row" ng-if="((typeService.Ref == 'WarehouseWarehouse') ||  (typeService.Ref == 'WarehouseDoors')) && ((typeDelivery.Ref == 'Documents'))">
+
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" ng-model="servicePackDocuments">Послуга пакування</label>
+
+                <div ng-show="servicePackDocuments" class="form-group col-md-8">
+                    <select ng-options="item.Description for item in listReturn" class="form-control" ng-model="SerReturn"></select>
+                    <div ng-show="servicePackDocuments" class="form-group col-xl-10">
+                        <input type="text" ng-model="packDocQuantity" class="form-control" id="quantityPack">
+                        <label for="quantityPack" class="form-check-label">Кількість</label>
+                        <select ng-options="item.Description for item in newListPack" class="form-control" ng-model="packDoc"></select>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!--Version Pack-->
+    
+    <div class="form-group row" ng-if="((typeService.Ref == 'WarehouseWarehouse') ||  (typeService.Ref == 'WarehouseDoors')) && ((typeDelivery.Ref =='Cargo') || (typeDelivery.Ref =='Pallet') || (typeDelivery.Ref =='TiresWheels'))">
+
+        
+        <div class="col-sm-10 offset-sm-2">
+            <div class="form-check">
+                <label class="form-check-label"><input class="form-check-input" type="checkbox" ng-model="servicePack">Послуга пакування</label>
+
+                <div ng-show="servicePack" class="form-group col-md-8">
+                    <label for="packType">Вид упаковки</label>
+                    <select ng-options="item.Description for item in listPack" class="form-control" ng-model="Pack" id="packType"></select>
+                </div>
+                <div ng-show="servicePack" class="form-group col-md-6">
+                    <input type="text" ng-model="packQuantity" class="form-control" id="quantityPack">
+                    <label for="packQuantity" class="form-check-label">Кількість</label>
+                    <select ng-options="item.Description for item in newListPack" class="form-control" ng-model="packDoc"></select>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+<!--
+<div class="form-check" ng-if="((typeService.Ref == 'WarehouseWarehouse') ||  (typeService.Ref == 'WarehouseDoors')) && ((typeDelivery.Ref =='Cargo') || (typeDelivery.Ref =='Pallet') || (typeDelivery.Ref =='TiresWheels'))">
+            <input type="checkbox" ng-model="servicePack" class="form-check-input">
+      <label class="form-check-label">Послуга пакування</label>
+      <div ng-show="servicePack" class="form-group col-xl-4">
+      <label for="packType">Вид упаковки</label>
+      <select ng-options="item.Description for item in listPack" class="form-control" ng-model="Pack" id="packType"></select>
+      <label for="quantityPack" class="form-check-label">Кількість</label>
+      <input type="text" ng-model="packQuantity" class="form-control" id="quantityPack">
+      </div>
+</div>
+-->
+
+    <div class="form-group row" ng-if="((typeDelivery.Ref =='Cargo') || (typeDelivery.Ref =='Pallet') || (typeDelivery.Ref =='TiresWheels'))">
+        <div class="offset-sm-2 col-sm-10">
+            <button type="submit" class="btn btn-success" ng-click="RequestCost()">Розрахувати вартість</button>
+        </div>
+    </div>
+
+    <div class="form-group row" ng-if="((typeDelivery.Ref == 'Documents'))">
+        <div class="offset-sm-2 col-sm-10">
+            <button type="submit" class="btn btn-success" ng-click="RequestDocPack()">Розрахувати вартість(Dco)</button>
+        </div>
+    </div>
+
+
+</fieldset>
+
+</div>

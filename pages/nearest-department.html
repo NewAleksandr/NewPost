@@ -1,0 +1,164 @@
+
+<div class="breadcrumbs clearfix">
+    <ul class="breadcrumbsList">
+        <li> {{ pageName }}</li>
+        <li> {{ dataStringCityName }} </li>
+        <li> {{ DepInfo.departmentTitle }} </li>
+        <li> {{ DepInfo.department }} </li>
+        <li> {{ DepInfo.postmashineTitle }} </li>
+        <li> {{ DepInfo.postmashine }} </li>
+        <li> {{ DepInfo.postmashinewarning }} </li>
+    </ul>
+</div>
+
+
+<!-- start -->
+<!--<div class="MapService clearfix">-->
+<div class="row">
+
+    <!--start list engine container-->
+    <!--<div class="ListEngine">-->
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+
+        <div class="SearchInput">
+
+            <input ng-change="ChangeCityInput()"
+                   ng-model="SearchFilter"
+                   id="CityInput"
+                   class="CityNameInput"
+                   type="text"
+                   placeholder="швидкий пошук міста"
+                   ng-value="valCityInput">
+
+            <div ng-if = "ifDepartmentListTop">
+
+                <input ng-model="SearchFilterDepartment"
+                       id="DepartmentInput"
+                       class="CityNameInput"
+                       type="text"
+                       placeholder="швидкий пошук відділення"
+                       ng-value="valDepInput">
+
+                <!--start angular-ui select2 for type-department choosing-->
+                <ui-select ng-model="SortDepartment"
+                           theme="selectize"
+                           on-select="TypeDepartmentSort($item)"
+                           class="SortTypeDepartment"
+                           title="">
+
+                    <ui-select-match style="text-align: center;" placeholder="Типи відділень">
+                        {{ SortDepartment.ItemTypeDepartment }}
+                    </ui-select-match>
+
+                    <ui-select-choices repeat="Type in SortTypeDepartment">
+
+                        <div>
+                            {{ Type.ItemTypeDepartment }}
+                        </div>
+
+                    </ui-select-choices>
+
+                </ui-select>
+                <!--start angular-ui select2 for type-department choosing-->
+
+            </div>
+            
+        </div>
+
+        
+
+        <div class="ListContainer">
+
+            <div ng-mouseover="MouseSityItem($event)"
+                 ng-click="ListItemClick($event)"
+                 ng-if = "ifSityList">
+
+                <ul class="ListSity">
+                    <li ng-repeat="city in SitiesList | filter : SearchFilter">
+                        {{ city.Description }}
+                    </li>
+                </ul>
+                
+            </div>
+
+            <div ng-mouseover="MouseDepartmentItem($event)"
+                 ng-click="DepItemClick($event)"
+                 ng-if = "ifDepartmentList">
+
+                <!--<input ng-model="SearchFilterDepartment" id="DepartmentInput" class="CityNameInput" type="text" placeholder="швидкий пошук відділення" ng-value="valDepInput">-->
+
+                <ul class="DepartmentList">
+                    <li ng-repeat="department in DepartmentList | filter : SearchFilterDepartment">
+
+                        <table style="width: 100%">
+                            <tr>
+                                <td style="text-align: center;">
+                                    {{ department.Description }}
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="text-align: center;">
+                                    довідки за телефоном: {{ department.Phone }}
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table data-table="hide" style = "display: none;" class="ShowHide">
+                            <tr>
+                                <td style="width: 30%; text-align: center;">прийом</td>
+                                <td style="width: 30%; text-align: center;">доставка</td>
+                                <td style="width: 30%; text-align: center;">графік</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;">
+                                    <table>
+                                        <tr ng-repeat="(x , y) in department.Schedule">
+                                            <td> {{ x }} </td>
+                                            <td> {{ y }} </td>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                                <td style="width: 30%;">
+                                    <table>
+                                        <tr ng-repeat="(x , y) in department.Reception">
+                                            <td> {{ x }} </td>
+                                            <td> {{ y }} </td>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                                <td style="width: 30%;">
+                                    <table>
+                                        <tr ng-repeat="(x , y) in department.Delivery">
+                                            <td> {{ x }} </td>
+                                            <td> {{ y }} </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </table>
+                        
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+    <!--end list engine container-->
+
+    <!--start map container-->
+    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+        
+        <!--<div id="map" style="height: 500px"></div>-->
+
+        <map control="arr"></map>
+
+    </div>
+    <!--end map container-->
+
+</div>
+<!-- end -->

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html ng-app="NewpostApp" lang="en">
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+     <link  href="coding/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link  href="coding/bootstrap/css/bootstrap.css" rel="stylesheet">
+     <link  href="coding/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+     <link  href="coding/bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet">
+    
+     <link  href="coding/css/style.css" rel="stylesheet">
+    
+    <!--may be to include files services to index.html -->
+    <!--
+    <script type="text/javascript" src="source/js/services/sentRequestService.js"></script>
+    -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+
+      <!-- for nearest-department test css  -->
+      <link rel="stylesheet" href="./source/css/nearest-department.css">
+
+      <!-- ui select css -->
+      <link rel="stylesheet" href="./source/js/lib/ui-select/select.css">
+
+      <!-- themes -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+
+
+  <title> Термінова і експрес доставка: транспортно-логістичні послуги в Києві та по всій Україні - служба доствки №1 «Нова пошта»</title>
+  <meta name="description" content="Весь спектр логістичних послуг, швидка та надійна доставка документів, кореспонденції та листів по Україні ★ Клієнтська подтримка 24/7 ☎ 0-800-500-609">
+  <link rel="shortcut icon" type="image/x-icon" href="coding/img/logo.png">
+
+
+ </head>
+  <body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-9 col-md-12 col-sm-12" >
+       <a href="#/" id="logo">
+       <img src="coding/img/nova–poshta-15-long_320px.png" alt=""></a>
+
+      </div>
+        <div class="col-lg-1 col-md-4 col-sm-4" id="lang">
+
+           <a class="active" href="/"><img src="coding/img/images.png" style="width: 20px; height: 20px; border-radius: 50%; float: left; border-width: 1px; border-color: red; border-style: solid;" alt="">Укр</a>
+        </div>
+        <div class="col-lg-1 col-md-4 col-sm-4" id="lang">  <a href="/ru"><img src="coding/img/rusflag.png" style="width: 20px; height: 20px; border-radius: 50%; border-width: 1px; border-color: red; border-style: solid; float: left;">Рус</a>
+        </div>
+
+        <div class="col-lg-1 col-md-4 col-sm-4" id="lang"> <a href="/en"> <img src="coding/img/unitedkingdom200px.png" style="width: 20px; height: 20px; border-radius: 50%; border-width: 1px; border-color: red; border-style: solid; float: left;">Eng</a>
+        </div>
+    </div>
+
+
+    <!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded row"> -->
+
+<div class="row">
+
+
+<!-- <div class="btn-group btn-group-justified navbar-light"> -->
+
+  <div class="col-lg-2 col-md-4 col-sm-12 btn-primary">
+    <a class="nav-link main" href="#/"><img  src='coding/img/logo.png' alt='Icons'>Головна</a>
+  </div>
+
+  <div class="col-lg-2 col-md-4 col-sm-12 btn-primary">
+    <a class="nav-link search" href="#/tracking"><img src='coding/img/spr_icons.png' alt='Icons'>Відстежити вантаж</a>
+  </div>
+
+  <div class="col-lg-2 col-md-4 col-sm-12 btn-primary">
+    <a class="nav-link cost" href="#/price"><img  src='coding/img/spr_icons.png' alt='Icons'>Вартість доставки</a>
+  </div>
+
+  <div class="col-lg-2 col-md-4 col-sm-12 btn-primary">
+    <a class="nav-link delivery" href="#/delivery-time"><img  src='coding/img/spr_icons.png' alt='Icons'>Термін доставки</a>
+  </div>
+
+  <div class="col-lg-2 col-md-4 col-sm-12 btn-primary">
+    <a class="nav-link branch" href="#/nearest-department"><img  src='coding/img/spr_icons.png' alt='Icons'>Найближче відділення</a>
+  </div>
+
+  <div class="col-lg-2 col-md-4 col-sm-12 btn-primary">
+    <a class="nav-link schedule" href="#/work-schedule"><img  src='coding/img/spr_icons.png' alt='Icons'>Графік роботи </a>
+  </div>
+
+</div>
+
+<!--   <div class="row justify-content-center">
+    <div class="col-4">
+      One of two columns
+    </div>
+    <div class="col-4">
+      One of two columns
+    </div>
+  </div> -->
+
+      <!--<div class="row justify-content-center">-->
+
+          <!--<div ng-view style="min-height: 500px;"></div>-->
+
+      <!--</div>-->
+
+
+
+      <div class="row">
+
+          <div ng-view style="min-height: 500px; width: 100%"></div>
+
+      </div>
+
+
+
+<footer class="footer1">
+<div class="container">
+
+<div class="row"><!-- row -->
+
+                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
+                <ul class="list-unstyled clear-margins"><!-- widgets -->
+
+                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
+
+                                <h1 class="title-widget">Нова пошта</h1>
+
+                                <ul>
+                                  <li><a  href="#"><i class="fa fa-angle-double-right"></i> доставка товарів вантажоперевезення</a></li>
+
+                                </ul>
+
+              </li>
+
+                        </ul>
+
+
+                </div><!-- widgets column left end -->
+
+
+
+                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
+
+                <ul class="list-unstyled clear-margins"><!-- widgets -->
+
+                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
+
+                                <h1 class="title-widget">Важлива інформація</h1>
+
+                                <ul>
+
+                                    <li><a  href="#"><i class="fa fa-angle-double-right"></i>  Всі права захищені. Використання матеріалів даного сайту можливе тільки з посиланням на джерело.</a></li>
+
+
+                                </ul>
+
+              </li>
+
+                        </ul>
+
+
+                </div><!-- widgets column left end -->
+
+
+
+                <div class="col-lg-3 col-md-3"><!-- widgets column left -->
+
+                <ul class="list-unstyled clear-margins"><!-- widgets -->
+
+                          <li class="widget-container widget_nav_menu"><!-- widgets list -->
+
+                                <h1 class="title-widget">Контакт-центр:</h1>
+
+                                <ul>
+
+
+                <li><a href="#"><i class="fa fa-angle-double-right"></i>
+
+    <b style="color:#ffc106;"> Дзвінки по всій території України безкоштовні:</b>
+0-800-500-609  </p></a></li>
+
+
+                                </ul>
+
+              </li>
+
+                        </ul>
+
+
+                </div><!-- widgets column left end -->
+
+
+             <div class="col-lg-3 col-md-3"><!-- widgets column center -->
+
+
+
+                        <ul class="list-unstyled clear-margins"><!-- widgets -->
+
+                          <li class="widget-container widget_recent_news"><!-- widgets list -->
+
+                                <h1 class="title-widget">2006–2017 ТОВ «Нова пошта» </h1>
+
+                                <div class="footerp">
+
+                                <!-- <h2 class="title-median">Webenlance Pvt. Ltd.</h2> -->
+                                <p><b>Email id:</b> <a href="mailto:Musienko.Julija@gmail.com">Musienko.Julija@gmail.com</a></p>
+
+
+    <p><b>Corp Office / Postal Address</b></p>
+    <p><b>Phone Numbers : </b>7042827160, </p>
+    <p> 011-27568832, 9868387223</p>
+                                </div>
+
+
+                                <div class="social-icons">
+
+                                  <ul class="nomargin">
+
+                <a href="https://www.facebook.com/bootsnipp"><i class="fa fa-facebook-square fa-3x social-fb" id="social"></i></a>
+              <a href="https://twitter.com/bootsnipp"><i class="fa fa-twitter-square fa-3x social-tw" id="social"></i></a>
+              <a href="https://plus.google.com/+Bootsnipp-page"><i class="fa fa-google-plus-square fa-3x social-gp" id="social"></i></a>
+              <a href="mailto:bootsnipp@gmail.com"><i class="fa fa-envelope-square fa-3x social-em" id="social"></i></a>
+
+                                    </ul>
+                                </div>
+                        </li>
+                          </ul>
+                       </div>
+                </div>
+</div>
+</footer>
+<!--header-->
+
+<div class="footer-bottom">
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        <div class="copyright">
+
+          © 2017, IT Aкадемія, All rights reserved
+
+        </div>
+
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+        <div class="design">
+
+           <a href="#">Franchisee </a> |  <a target="_blank" href="http://www.webenlance.com">Web Design & Development by Webenlance</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</div>
+  
+  <!-- Google Maps  -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDtP3pokVc-chGZQ-nY2syPrEmAp8sa8ig&signed_in=true&callback=initMap&signed_in=true" async defer></script>
+  <!-- angular -->
+  <!--
+  <script src="./source/js/lib/angularjs/1.6.1/angular.js"></script>
+  
+  <script src="./source/js/lib/angularjs/1.6.1/angular-route.js"></script>
+  <script src="./source/js/lib/angularjs/1.6.1/angular-sanitize.js"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-sanitize.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+  <!-- ui select js-->
+  <script src="./source/js/lib/ui-select/select.js"></script>
+  <!-- for Newpost scipts js -->
+  <script src="./source/js/modules/newpost-app.js"></script>
+  <script src="./source/js/modules/newpost-routing.js"></script>
+  <!-- controllers -->
+  <script src="./source/js/controllers/home.js"></script>
+  <script src="./source/js/controllers/tracking.js"></script>
+  <script src="./source/js/controllers/price.js"></script>
+  <script src="./source/js/controllers/delivery-time.js"></script>
+  <script src="./source/js/controllers/nearest-department.js"></script>
+  <script src="./source/js/controllers/work-schedule.js"></script>
+  <script src="./source/js/controllers/list-mode.js"></script>
+  <!-- filters -->
+  <script src="./source/js/filters/CityList.js"></script>
+  <!-- factories -->
+  <script src="source/js/services/CityList.js"></script>
+  <script src="source/js/services/DepartmentList.js"></script>
+  <!--<script src="source/js/services/GoogleMap.js"></script>-->
+  <script src="source/js/services/requestService.js"></script>
+  <!-- directives -->
+  <script src="source/js/directives/GoogleMapDir.js"></script>  
+  </body>
+</html>
